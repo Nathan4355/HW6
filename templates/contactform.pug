@@ -1,0 +1,47 @@
+doctype html 
+html 
+    head
+        title Contact Us 
+        meta(charset="utf-8")
+        link#light(href="/css/main.css",rel="stylesheet",type="text/css")
+        script(src="/js/main.js",async="")
+        script(src="/js/contact.js",async="")
+    body 
+        nav 
+            p 
+                a(href="/") Main
+            p 
+                a(href="/testimonies") Testimonials 
+            p
+                a(href="/contact") Contact Us 
+            p 
+                a(href="/admin/contactlog") Contact log 
+            p 
+                button#darkmode(onclick="toggle_style()") Dark Mode 
+        h1 Schedule an appointment 
+        form(action="/contact",method="POST")
+            p
+                label(for="name") Name: 
+                input#name(type="text",name="name")
+            p
+                label(for="email") Email: 
+                input#email(type="email", name="email")
+            p
+                label(for="date") Estimated date of arrival: 
+                input#date(type="date",name="date")
+            p 
+                label(for="ship_condition")
+                select#ship-condition(name="ship_condition") What's your ship's condition: 
+                    option(value="No repairs needed") No repairs needed 
+                    option(value="Light repairs needed") Light repairs needed 
+                    option(value="Heavy repairs needed") Heavy repairs needed 
+                    option(value="New ship") Sinking, need a new Ship
+            p
+                label(for="new_customer") New customer: 
+                input#new-customer(type="checkbox",name="new_customer")  
+            p 
+                input#submit(type="submit",name="submit")
+            p cost=
+                span#result
+                span#units(hidden="true")
+                |  Golden doubloons 
